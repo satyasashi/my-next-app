@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            nodejs: 20 # Specify the Node.js version you want to use
+        commands:
+            - echo "Installing dependencies..."
+            - npm install
+
+    build:
+        commands:
+            - echo "Building Next.js app..."
+            - npm run build # This runs the build command for your Next.js app
+
+artifacts:
+    files:
+        - "**/*" # This specifies which files to include in the artifact
+    base-directory: ".next" # Specify the base directory for the build artifacts
+    name: "nextjs-build"
+
+cache:
+    paths:
+        - "node_modules/**/*" # Cache the `node_modules` directory for faster builds
