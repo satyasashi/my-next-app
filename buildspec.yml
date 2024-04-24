@@ -12,10 +12,11 @@ phases:
         commands:
             - echo "Building Next.js app..."
             - npm run build # This runs the build command for your Next.js app. something...
+            - echo "Build ran successfully..."
 artifacts:
     files:
         - "**/*" # This specifies which files to include in the artifact
-    base-directory: ".next" # Specify the base directory for the build artifacts
+    base-directory: "." # Specify the base directory for the build artifacts
     name: "nextjs-build"
 
 cache:
